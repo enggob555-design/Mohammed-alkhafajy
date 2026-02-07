@@ -9,17 +9,17 @@ body {
     color: white;
 }
 
-/* استخدام صورة الخلفية التي أرفقتها */
+/* استخدام صورة ريال مدريد كخلفية كاملة */
 .royal-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('1000066005.jpg'); /* الصورة الملكية */
+    background-image: url('1000066005.jpg'); /* اسم ملف الخلفية المرفق */
     background-size: cover;
     background-position: center;
-    opacity: 0.4; /* لضمان وضوح الكتابة */
+    opacity: 0.5;
     z-index: -1;
 }
 
@@ -27,13 +27,65 @@ body {
     width: 85%;
     max-width: 380px;
     text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.6); /* خلفية شبه شفافة للمحتوى */
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.7); /* تعتيم خلفية القائمة لإبراز الكتابة */
     border-radius: 20px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    backdrop-filter: blur(5px); /* تأثير زجاجي فخم */
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    backdrop-filter: blur(8px);
 }
 
+.profile-img img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid #d4af37;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.name {
+    color: #d4af37; /* لون ذهبي */
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+.blood-type {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.blood-type .type {
+    color: #ff3e3e; /* اللون الأحمر لفئة الدم */
+    font-weight: bold;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn {
+    padding: 14px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #d4af37;
+    color: #000;
+}
+
+/* ألوان التمييز الجانبية للأزرار */
+.whatsapp { border-right: 5px solid #25d366; }
+.facebook { border-right: 5px solid #1877f2; }
+.email { border-right: 5px solid #ea4335; }
 .profile-img img {
     width: 140px;
     height: 140px;
