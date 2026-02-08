@@ -1,4 +1,3 @@
-/* الإعدادات العامة للجسم */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #000000;
@@ -8,32 +7,92 @@ body {
     align-items: center;
     min-height: 100vh;
     overflow-x: hidden;
-    position: relative;
 }
 
-/* خلفية ريال مدريد الملكية - الصورة التي أرفقتها */
-.royal-bg {
+/* شعار ريال مدريد الواقعي في الخلفية */
+.background-logo {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('1000066005.jpg'); /* تأكد من وجود هذا الملف في GitHub */
-    background-size: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    height: 500px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.4; /* درجة الشفافية لجعل الكلام واضحاً */
+    opacity: 0.15; /* شفافية خفيفة جداً للفخامة */
+    filter: grayscale(100%) brightness(150%); /* جعله يبدو معدنياً واقعياً */
     z-index: -1;
 }
 
-/* الحاوية الرئيسية للمحتوى */
 .container {
     width: 90%;
-    max-width: 380px;
+    max-width: 400px;
     text-align: center;
-    padding: 30px 20px;
-    background: rgba(0, 0, 0, 0.7); /* خلفية سوداء شفافة للمحتوى */
-    border-radius: 20px;
+    padding: 20px;
+    z-index: 1;
+}
+
+.profile-img img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid #d4af37; /* إطار ذهبي */
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    object-fit: cover;
+}
+
+/* الكتابة بلون ذهبي مميز */
+.name {
+    color: #d4af37;
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.2rem;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.blood-type {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.blood-type .type {
+    color: #ff0000; /* فئة الدم باللون الأحمر للوضوح */
+    font-weight: bold;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    padding: 14px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(212, 175, 55, 0.3);
+    transition: 0.3s all ease;
+}
+
+/* ألوان الأزرار عند المرور عليها */
+.btn:hover {
+    background: #d4af37;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+.whatsapp:hover { background-color: #25d366; border-color: #25d366; }
+.facebook:hover { background-color: #1877f2; border-color: #1877f2; }
+.email:hover { background-color: #ea4335; border-color: #ea4335; }
     backdrop-filter: blur(10px); /* تأثير زجاجي فخم */
     z-index: 1;
 }
