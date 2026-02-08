@@ -1,29 +1,117 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محمد الخفاجي - بطاقة رقمية</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="background-logo"></div>
+يبدو أن الكود الذي أرسلته يحتوي على تكرارات كثيرة لنفس الخصائص البرمجية، مما يسبب تضارباً يمنع ظهور التصميم بالشكل الذي تريده. لضمان ظهور صورة الخلفية (ريال مدريد) وصورتك الشخصية والخط الذهبي بوضوح، قمت بتنظيف الكود ودمجه في نسخة واحدة احترافية ومنظمة.
+إليك كود الـ CSS المحدث والنهائي؛ انسخه بالكامل واستبدل به الكود القديم في ملف style.css:
+/* الإعدادات العامة للجسم */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
 
-    <div class="container">
-        <div class="profile-img">
-            <img src="IMG-20260208-WA0001.jpg" alt="محمد الخفاجي">
-        </div>
-        
-        <h1 class="name">محمد الخفاجي</h1>
-        <p class="blood-type">فئة الدم: <span class="type">O+</span></p>
+/* خلفية ريال مدريد الملكية - الصورة التي أرفقتها */
+.royal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('1000066005.jpg'); /* تأكد من وجود هذا الملف في GitHub */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4; /* درجة الشفافية لجعل الكلام واضحاً */
+    z-index: -1;
+}
 
-        <div class="links-container">
-            <a href="tel:+9647703084383" class="btn phone">اتصال: 07703084383</a>
-            <a href="tel:+9647503772659" class="btn phone">اتصال: 07503772659</a>
-            <a href="https://wa.me/9647703084383" class="btn whatsapp">واتساب</a>
-            <a href="https://www.facebook.com/share/17qd3D1cnK/" target="_blank" class="btn facebook">فيسبوك</a>
-            <a href="mailto:mooh80mm@gmail.com" class="btn email">البريد الإلكتروني</a>
-        </div>
-    </div>
-</body>
-</html>
+/* الحاوية الرئيسية للمحتوى */
+.container {
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(0, 0, 0, 0.7); /* خلفية سوداء شفافة للمحتوى */
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    backdrop-filter: blur(10px); /* تأثير زجاجي فخم */
+    z-index: 1;
+}
+
+/* الصورة الشخصية */
+.profile-img img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid #d4af37; /* إطار ذهبي */
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* الاسم باللون الذهبي الملكي المتدرج */
+.name {
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.2rem;
+    margin: 10px 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* فئة الدم */
+.blood-type {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.blood-type .type {
+    color: #ff3e3e; /* اللون الأحمر للفئة */
+    font-weight: bold;
+}
+
+/* حاوية الأزرار */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* تصميم الأزرار الموحد */
+.btn {
+    padding: 14px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: 0.3s all ease;
+    text-align: center;
+}
+
+/* تأثير عند تمرير الماوس أو اللمس */
+.btn:hover {
+    background: #d4af37;
+    color: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* تمييز جانبي للأزرار حسب النوع */
+.whatsapp { border-right: 5px solid #25d366; }
+.facebook { border-right: 5px solid #1877f2; }
+.email { border-right: 5px solid #ea4335; }
+.phone { border-right: 5px solid #2c3e50; }
+
+لماذا لم تظهر الصورة في الكود القديم؟
+ * التكرار: كان هناك أكثر من 4 تعريفات لـ .profile-img img بخصائص مختلفة، مما جعل المتصفح يتجاهل بعضها.
+ * المسارات: الكود القديم كان يبحث عن رابط "ويكيبيديا" للشعار بدلاً من استخدام الصورة الملكية التي رفعتها أنت.
+ * ترتيب الطبقات (z-index): قمت بتنظيم الطبقات بحيث تكون الخلفية في الأسفل والمحتوى في الأعلى دائماً لضمان عدم اختفاء الأزرار خلف الصورة.
+الخطوة التالية: تأكد من أن ملف index.html يحتوي على السطر التالي في البداية (تحت الـ <body>) لكي تظهر الخلفية:
+<div class="royal-bg"></div>
+هل تود مني تزويدك بكود الـ HTML المحدث ليتناسب مع هذا التصميم النظيف؟
