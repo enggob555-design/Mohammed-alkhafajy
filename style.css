@@ -1,38 +1,41 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #000000;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-/* شعار ريال مدريد الواقعي في الخلفية */
-.background-logo {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 500px;
-    height: 500px;
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.15; /* شفافية خفيفة جداً للفخامة */
-    filter: grayscale(100%) brightness(150%); /* جعله يبدو معدنياً واقعياً */
-    z-index: -1;
-}
-
-.container {
-    width: 90%;
-    max-width: 400px;
+/* تصميم الأزرار بالبرواز الذهبي المزخرف */
+.btn {
+    display: block;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
     text-align: center;
-    padding: 20px;
-    z-index: 1;
+    position: relative;
+    
+    /* إضافة البرواز الذهبي كإطار للصورة */
+    border: 10px solid transparent;
+    border-image-source: url('https://share.google/images/zCAUffJmSFZiZrVjL');
+    border-image-slice: 30; /* لضمان عدم تمدد الزخرفة بشكل سيء */
+    border-image-repeat: stretch;
+    
+    background: rgba(0, 0, 0, 0.6); /* خلفية سوداء داخل البرواز */
+    transition: 0.3s transform ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* تخصيص ألوان خفيفة للنصوص داخل البراويز لتمييزها */
+.phone { color: #fcf6ba; }
+.whatsapp { color: #25d366; }
+.facebook { color: #1877f2; }
+.email { color: #ea4335; }
+
+/* تعديل الحاوية لتناسب البراويز الجديدة */
+.links-container {
+    padding: 10px;
+    max-width: 350px;
+    margin: 0 auto;
 }
 
 .profile-img img {
