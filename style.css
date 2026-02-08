@@ -1,39 +1,107 @@
-/* تصميم الأزرار بالبرواز الذهبي المزخرف */
-.btn {
-    display: block;
-    margin-bottom: 15px;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 1.1rem;
+body {
+    background-color: #050505; /* أسود ملكي */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-container {
+    width: 90%;
+    max-width: 400px;
+    background: linear-gradient(145deg, #111, #000);
+    border: 2px solid #d4af37; /* برواز ذهبي خارجي للبطاقة */
+    border-radius: 30px;
+    padding: 40px 20px;
     text-align: center;
     position: relative;
-    
-    /* إضافة البرواز الذهبي كإطار للصورة */
-    border: 10px solid transparent;
-    border-image-source: url('https://share.google/images/zCAUffJmSFZiZrVjL');
-    border-image-slice: 30; /* لضمان عدم تمدد الزخرفة بشكل سيء */
-    border-image-repeat: stretch;
-    
-    background: rgba(0, 0, 0, 0.6); /* خلفية سوداء داخل البرواز */
-    transition: 0.3s transform ease;
+    box-shadow: 0 20px 50px rgba(0,0,0,1), 0 0 20px rgba(212, 175, 55, 0.2);
+    overflow: hidden;
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    filter: brightness(1.2);
+/* شعار ريال مدريد كخلفية مدمجة */
+.madrid-logo-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1; /* شفافية هادئة جداً */
+    z-index: 0;
+    pointer-events: none;
 }
 
-/* تخصيص ألوان خفيفة للنصوص داخل البراويز لتمييزها */
-.phone { color: #fcf6ba; }
-.whatsapp { color: #25d366; }
-.facebook { color: #1877f2; }
-.email { color: #ea4335; }
+.profile-section {
+    position: relative;
+    z-index: 1;
+}
 
-/* تعديل الحاوية لتناسب البراويز الجديدة */
-.links-container {
-    padding: 10px;
+.main-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #d4af37;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+    object-fit: cover;
+}
+
+.name-gold {
+    color: #d4af37;
+    font-size: 2.2rem;
+    margin: 20px 0 10px;
+    text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+    z-index: 1;
+    position: relative;
+}
+
+.blood-info {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    z-index: 1;
+    position: relative;
+}
+
+.blood-type { color: #ff4444; font-weight: bold; }
+
+.links-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1;
+    position: relative;
+}
+
+/* تصميم الأزرار كبراويز ذهبية فخمة */
+.gold-link {
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+    border: 1px solid #d4af37; /* إطار ذهبي نحيف */
+    border-radius: 12px;
+    background: rgba(212, 175, 55, 0.05);
+    transition: 0.4s;
+    font-weight: bold;
+    display: block;
+}
+
+.gold-link:hover {
+    background: #d4af37;
+    color: #000;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+    transform: scale(1.03);
+}
+
+/* تمييز أيقوني خفيف */
+.wa { border-right: 4px solid #25d366; }
+.fb { border-right: 4px solid #1877f2; }
+.mail { border-right: 4px solid #ea4335; }
     max-width: 350px;
     margin: 0 auto;
 }
